@@ -1,6 +1,15 @@
-setInterval(function() {
+document.addEventListener("DOMContentLoaded", function() {
     
-    let losAngelesElement = document.querySelector(".Los-Angeles");
+    updateCitiesTime();
+
+    
+    setInterval(updateCitiesTime, 1000);
+});
+
+
+function updateCitiesTime() {
+    
+    let losAngelesElement = document.querySelector("#Los-Angeles");
     if (losAngelesElement) {
         let losAngelesDateElement = losAngelesElement.querySelector(".date");
         let losAngelesTimeElement = losAngelesElement.querySelector(".time");
@@ -11,7 +20,7 @@ setInterval(function() {
     }
 
     
-    let sydneyElement = document.querySelector(".Sydney");
+    let sydneyElement = document.querySelector("#Sydney");
     if (sydneyElement) {
         let sydneyDateElement = sydneyElement.querySelector(".date");
         let sydneyTimeElement = sydneyElement.querySelector(".time");
@@ -20,7 +29,7 @@ setInterval(function() {
         sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
         sydneyTimeElement.innerHTML = sydneyTime.format("h:mm:ss[<small>] A[</small>]");
     }
-}, 1000); 
+}
 
 
 
